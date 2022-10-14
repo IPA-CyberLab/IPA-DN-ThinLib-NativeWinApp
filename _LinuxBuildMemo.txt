@@ -3,15 +3,15 @@ cd ~/
 git clone  --recursive git@github.com:IPA-CyberLab/IPA-DN-ThinLib-NativeUtilApp.git
 
 ### 2 回目以降
-(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin main && git submodule update --init --recursive))
+(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive))
 
 
 ### ビルドおよび実行
-(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin main && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && bin/NativeUtilApp
+(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && bin/NativeUtilApp
 
 
 ### UDP ベンチマークテストの実行 (NW に負荷をかけるため、注意して実行すること)
-(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin main && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.2 5454 32
+(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.2 5454 32
 
 ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.2 5454 32
 
@@ -21,7 +21,7 @@ git clone  --recursive git@github.com:IPA-CyberLab/IPA-DN-ThinLib-NativeUtilApp.
 
 
 ### DNS ベンチマークテストの実行 (NW に負荷をかけるため、注意して実行すること)
-(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin main && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.24 8053 36 0 _ 100kpps
+(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.24 8053 36 0 _ 100kpps
 
 ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.24 8053 36 0 _ 100kpps
 
@@ -40,7 +40,7 @@ cd ~/build_IPA-DN-ThinLib-NativeUtilApp/
 
 git clone  --recursive git@github.com:IPA-CyberLab/IPA-DN-ThinLib-NativeUtilApp.git
 
-(cd ~/build_IPA-DN-ThinLib-NativeUtilApp/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin main && git submodule update --init --recursive)) && cd ~/build_IPA-DN-ThinLib-NativeUtilApp/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && bin/NativeUtilApp
+(cd ~/build_IPA-DN-ThinLib-NativeUtilApp/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive)) && cd ~/build_IPA-DN-ThinLib-NativeUtilApp/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && bin/NativeUtilApp
 
 cd ~/build_IPA-DN-ThinLib-NativeUtilApp/IPA-DN-ThinLib-NativeUtilApp/src/
 
