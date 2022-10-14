@@ -144,7 +144,7 @@
       <StackReserveSize>100000</StackReserveSize>
       <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
-      <AdditionalOptions>/IGNORE:4199,4221 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/IGNORE:4199,4221,4098 %(AdditionalOptions)</AdditionalOptions>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PreLinkEvent>
@@ -189,7 +189,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(SolutionDir)DebugFiles\map\$(PlatformName)_$(Configuration)\$(TargetName).map</MapFileName>
       <StackReserveSize>100000</StackReserveSize>
-      <AdditionalOptions>/IGNORE:4199,4221 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/IGNORE:4199,4221,4098 %(AdditionalOptions)</AdditionalOptions>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PreLinkEvent>
@@ -236,7 +236,7 @@
       <StackReserveSize>100000</StackReserveSize>
       <OptimizeReferences>false</OptimizeReferences>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
-      <AdditionalOptions>/IGNORE:4199,4221 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/IGNORE:4199,4221,4098 %(AdditionalOptions)</AdditionalOptions>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PreLinkEvent>
@@ -282,7 +282,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(SolutionDir)DebugFiles\map\$(PlatformName)_$(Configuration)\$(TargetName).map</MapFileName>
       <StackReserveSize>100000</StackReserveSize>
-      <AdditionalOptions>/IGNORE:4199,4221 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/IGNORE:4199,4221,4098 %(AdditionalOptions)</AdditionalOptions>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PreLinkEvent>
