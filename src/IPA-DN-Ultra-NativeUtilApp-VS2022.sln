@@ -8,21 +8,21 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeUtilApp", "NativeUtil
 		{9279DA54-8BBB-473F-A1FA-54B714CF33D8} = {9279DA54-8BBB-473F-A1FA-54B714CF33D8}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTool", "..\submodules\IPA-DN-Ultra\src\BuildTool\BuildTool.csproj", "{9279DA54-8BBB-473F-A1FA-54B714CF33D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTool", "..\submodules\IPA-DN-ThinLib\src\BuildTool\BuildTool.csproj", "{9279DA54-8BBB-473F-A1FA-54B714CF33D8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cedar", "..\submodules\IPA-DN-Ultra\src\Cedar\Cedar.vcxproj", "{D11C227F-AE0E-4B8B-8D99-F9EA28FF3BE8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Cedar", "..\submodules\IPA-DN-ThinLib\src\Cedar\Cedar.vcxproj", "{D11C227F-AE0E-4B8B-8D99-F9EA28FF3BE8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F95D574F-0BBD-464D-8211-2D02D85EACD0} = {F95D574F-0BBD-464D-8211-2D02D85EACD0}
 		{9279DA54-8BBB-473F-A1FA-54B714CF33D8} = {9279DA54-8BBB-473F-A1FA-54B714CF33D8}
 		{3D141CDA-D58C-4DDE-BD31-3205DC3246EF} = {3D141CDA-D58C-4DDE-BD31-3205DC3246EF}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mayaqua", "..\submodules\IPA-DN-Ultra\src\Mayaqua\Mayaqua.vcxproj", "{F95D574F-0BBD-464D-8211-2D02D85EACD0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Mayaqua", "..\submodules\IPA-DN-ThinLib\src\Mayaqua\Mayaqua.vcxproj", "{F95D574F-0BBD-464D-8211-2D02D85EACD0}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9279DA54-8BBB-473F-A1FA-54B714CF33D8} = {9279DA54-8BBB-473F-A1FA-54B714CF33D8}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PenCore", "..\submodules\IPA-DN-Ultra\src\PenCore\PenCore.vcxproj", "{3D141CDA-D58C-4DDE-BD31-3205DC3246EF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PenCore", "..\submodules\IPA-DN-ThinLib\src\PenCore\PenCore.vcxproj", "{3D141CDA-D58C-4DDE-BD31-3205DC3246EF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9279DA54-8BBB-473F-A1FA-54B714CF33D8} = {9279DA54-8BBB-473F-A1FA-54B714CF33D8}
 	EndProjectSection
@@ -39,9 +39,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vars", "Vars", "{349CC1E7-9
 		Vars\VersionInfo.rc = Vars\VersionInfo.rc
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPA-DN-Ultra", "IPA-DN-Ultra", "{65DE977F-4313-4282-BFE9-A872A5293561}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IPA-DN-ThinLib", "IPA-DN-ThinLib", "{65DE977F-4313-4282-BFE9-A872A5293561}"
 	ProjectSection(SolutionItems) = preProject
-		..\submodules\IPA-DN-Ultra\src\GlobalConst.h = ..\submodules\IPA-DN-Ultra\src\GlobalConst.h
+		..\submodules\IPA-DN-ThinLib\src\GlobalConst.h = ..\submodules\IPA-DN-ThinLib\src\GlobalConst.h
 	EndProjectSection
 EndProject
 Global
