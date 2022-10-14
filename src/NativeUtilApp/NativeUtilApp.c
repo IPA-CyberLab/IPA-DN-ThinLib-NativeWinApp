@@ -571,7 +571,8 @@ void udpbench_thread(THREAD* thread, void* param)
 	UINT count = 1024;
 	struct mmsghdr2* msgvec = NULL;
 	volatile static UINT dst_rand_addr = 0;
-	char* dns_packet_hex = "0008010000010000000000000476706e3109736f66746574686572036e65740000010001";
+	// DNS A: host0000535677.ddns_example.net.
+	char *dns_packet_hex = "0003000000010000000000000574657374310c64646e735f6578616d706c65036e65740000010001";
 
 	BUF* dns_packet_buf = StrToBin(dns_packet_hex);
 
