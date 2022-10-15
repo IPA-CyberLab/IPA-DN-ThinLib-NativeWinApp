@@ -21,11 +21,30 @@ git clone  --recursive git@github.com:IPA-CyberLab/IPA-DN-ThinLib-NativeUtilApp.
 
 
 ### DNS ベンチマークテストの実行 (NW に負荷をかけるため、注意して実行すること)
-(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.24 8053 36 0 _ 100kpps
+(cd ~/IPA-DN-ThinLib-NativeUtilApp/ && (cd $(git rev-parse --show-toplevel) && git pull origin master && git submodule update --init --recursive)) && cd ~/IPA-DN-ThinLib-NativeUtilApp/src/ && make -j 10 && ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.2 53 40 0 _ 100kpps
 
-~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.24 8053 36 0 _ 100kpps
 
-~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench dn-vpnvault2.sec.softether.co.jp 8053 36
+# PC34 (Windows) 100kpps まで
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.2 53 40 0 _ 100kpps
+
+# PC38 (Windows) 無制限
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.21.1.50 53 40 0 _
+
+# dn-vpnvault2 (Linux) 無制限
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench dn-vpnvault2.sec.softether.co.jp 53 40 0 _
+
+# dnt-hadb1 (Linux)
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.20.1.138 53 40 0 _ 300kpps
+
+# dnt-tmp1 (Linux)
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.20.1.140 53 40 0 _ 300kpps
+
+
+# UDP 受信を OFF
+iptables -F
+iptables -A INPUT -s 192.168.3.2 -j ACCEPT
+iptables -A INPUT -s 192.168.3.96 -j ACCEPT
+iptables -A INPUT -p udp --sport 53 -j DROP
 
 
 

@@ -779,6 +779,13 @@ void udpbench_test(UINT num, char** arg)
 		udpbench_target_pps = 0;
 	}
 
+	if (num >= 7)
+	{
+		num_cpu = ToInt(arg[6]);
+		num_cpu = MAX(num_cpu, 1);
+		num_cpu = MIN(num_cpu, 64);
+	}
+
 	udpbench_total_packets = 0;
 
 	if (IsEmptyStr(target_hostname) || target_port_start == 0 || size == 0)
