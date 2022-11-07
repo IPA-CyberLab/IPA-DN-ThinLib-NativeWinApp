@@ -36,8 +36,11 @@ git clone  --recursive git@github.com:IPA-CyberLab/IPA-DN-ThinLib-NativeUtilApp.
 # dnt-hadb1 (Linux)
 ~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.20.1.138 53 40 0 _ 300kpps
 
-# dnt-tmp1 (Linux)
-~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.20.1.140 53 40 0 _ 300kpps
+# dnt-tmp1 (Linux) 32 CPU
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.20.1.140 53 40 0 _ 300kpps 32
+
+# dnt-tmp1 (Linux) 1 CPU
+~/IPA-DN-ThinLib-NativeUtilApp/src/bin/NativeUtilApp udpbench 10.20.1.140 53 40 0 _ 300kpps 1
 
 
 # UDP 受信を OFF
