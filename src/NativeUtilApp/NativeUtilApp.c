@@ -962,8 +962,42 @@ void udprand_test(UINT num, char** arg)
 	}
 }
 
+void vdi_admin_main()
+{
+	DS_WIN32_RDP_POLICY pol = CLEAN;
+
+	pol.HasValidValue = true;
+
+	// Force enable RDP
+	if (DsWin32SetRdpPolicy(&pol) == false)
+	{
+		Print("DsWin32SetRdpPolicy error.\n");
+	}
+}
+
+void vdi_admin_util(UINT num, char **arg)
+{
+	UINT i;
+
+	Print("Start VDI Admin Tool\n");
+
+	for (i = 0;;i++)
+	{
+		Print("Loop %u\n", i);
+
+		vdi_admin_main();
+
+		UINT wait_interval = GenRandInterval2(10000, 0);
+
+		Print("Ok. Waiting for %u msecs...\n", wait_interval);
+
+		SleepThread(wait_interval);
+	}
+}
+
 void test(UINT num, char **arg)
 {
+	vdi_admin_main();
 }
 
 // テスト関数一覧定義
@@ -986,6 +1020,8 @@ TEST_LIST test_list[] =
 
 	{"sslclientbench", sslclientbench_test},
 	{"scb", sslclientbench_test},
+
+	{"vdi", vdi_admin_util},
 };
 
 // テスト関数
