@@ -995,6 +995,14 @@ void vdi_admin_util(UINT num, char **arg)
 	}
 }
 
+void hello_test(UINT num, char **arg)
+{
+	Print("Hello World!\n");
+	Print("Exiting...");
+
+	exit(0);
+}
+
 void test(UINT num, char **arg)
 {
 	vdi_admin_main();
@@ -1021,6 +1029,7 @@ TEST_LIST test_list[] =
 	{"sslclientbench", sslclientbench_test},
 	{"scb", sslclientbench_test},
 
+	{"hello", hello_test},
 	{"vdi", vdi_admin_util},
 };
 
