@@ -962,16 +962,42 @@ void udprand_test(UINT num, char** arg)
 	}
 }
 
-void vdi_admin_main()
+void vdi_admin_main(UINT count)
 {
 	DS_WIN32_RDP_POLICY pol = CLEAN;
 
 	pol.HasValidValue = true;
 
-	// Force enable RDP
-	if (DsWin32SetRdpPolicy(&pol) == false)
+	bool is_rdp_disabled = false;
+
+	UINT rdp_port = DsGetRdpPortFromRegistry();
+
+	if (rdp_port != 0)
 	{
-		Print("DsWin32SetRdpPolicy error.\n");
+		SOCK *s = Connect("127.0.0.1", rdp_port);
+
+		if (s != NULL)
+		{
+			Disconnect(s);
+			ReleaseSock(s);
+		}
+		else
+		{
+			is_rdp_disabled = true;
+		}
+	}
+
+	if (is_rdp_disabled)
+	{
+		Print("RDP seems to be disabled. Trying to enable it...\n");
+
+		MsEnableRemoteDesktop();
+
+		// Force enable RDP
+		if (DsWin32SetRdpPolicy(&pol) == false)
+		{
+			Print("DsWin32SetRdpPolicy error.\n");
+		}
 	}
 }
 
@@ -985,7 +1011,7 @@ void vdi_admin_util(UINT num, char **arg)
 	{
 		Print("Loop %u\n", i);
 
-		vdi_admin_main();
+		vdi_admin_main(i);
 
 		UINT wait_interval = GenRandInterval2(10000, 0);
 
@@ -1005,7 +1031,7 @@ void hello_test(UINT num, char **arg)
 
 void test(UINT num, char **arg)
 {
-	vdi_admin_main();
+	vdi_admin_main(0);
 }
 
 // テスト関数一覧定義
