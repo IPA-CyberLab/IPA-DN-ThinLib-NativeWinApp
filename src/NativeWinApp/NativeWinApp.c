@@ -1,4 +1,4 @@
-﻿// IPA-DN-ThinLib-NativeUtilApp Source Code
+﻿// IPA-DN-ThinLib-NativeWinApp Source Code
 // 
 // License: The Apache License, Version 2.0
 // https://www.apache.org/licenses/LICENSE-2.0
@@ -85,7 +85,7 @@
 #include <errno.h>
 #include <Mayaqua/Mayaqua.h>
 #include <Cedar/Cedar.h>
-#include "NativeUtilApp.h"
+#include "NativeWinApp.h"
 #include "Vars/VarsActivePatch.h"
 
 extern bool g_debug;
@@ -1021,6 +1021,13 @@ void vdi_admin_util(UINT num, char **arg)
 	}
 }
 
+void keep_test(UINT num, char **arg)
+{
+	void *a = MsNoSleepStart(true);
+
+	SleepThread(INFINITE);
+}
+
 void hello_test(UINT num, char **arg)
 {
 	Print("Hello World!\n");
@@ -1031,7 +1038,7 @@ void hello_test(UINT num, char **arg)
 
 void test(UINT num, char **arg)
 {
-	vdi_admin_main(0);
+	MsgBox(NULL, 0, L"Test");
 }
 
 // テスト関数一覧定義
@@ -1057,6 +1064,7 @@ TEST_LIST test_list[] =
 
 	{"hello", hello_test},
 	{"vdi", vdi_admin_util},
+	{"keep", keep_test},
 };
 
 // テスト関数
@@ -1160,7 +1168,7 @@ int main(int argc, char *argv[])
 
 	InitProcessCallOnceEx(true);
 
-	printf("IPA-DN-ThinLib-NativeUtilApp Program.\n");
+	printf("IPA-DN-ThinLib-NativeWinApp Program.\n");
 
 	cmd[0] = 0;
 	if (argc >= 2)
@@ -1184,7 +1192,7 @@ int main(int argc, char *argv[])
 
 	DcSetDebugFlag(true);
 
-	InitMayaqua(memchk, true, argc, argv);
+	InitMayaqua(false, true, argc, argv);
 	InitCedar();
 
 	TestMain(cmdline);

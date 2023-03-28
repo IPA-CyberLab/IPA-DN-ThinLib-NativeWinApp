@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{5E95B752-C42E-467A-B9D4-8BE6EAEF443B}</ProjectGuid>
-    <RootNamespace>NativeUtilApp</RootNamespace>
+    <RootNamespace>NativeWinApp</RootNamespace>
     <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -132,7 +132,7 @@
       <UseFullPaths>false</UseFullPaths>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
@@ -177,7 +177,7 @@
       <UseFullPaths>false</UseFullPaths>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -224,7 +224,7 @@
       <UseFullPaths>false</UseFullPaths>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib</AdditionalDependencies>
@@ -270,7 +270,7 @@
       <UseFullPaths>false</UseFullPaths>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>false</EnableCOMDATFolding>
       <OptimizeReferences>false</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -294,17 +294,17 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="NativeUtilApp.c" />
+    <ClCompile Include="NativeWinApp.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NativeUtilApp.h" />
+    <ClInclude Include="NativeWinApp.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="NativeUtilApp.rc" />
+    <ResourceCompile Include="NativeWinApp.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="NativeUtilApp.ico" />
+    <Image Include="NativeWinApp.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\submodules\IPA-DN-ThinLib\src\Cedar\Cedar.vcxproj">

@@ -1,4 +1,4 @@
-# IPA-DN-ThinLib-NativeUtilApp Source Code
+# IPA-DN-ThinLib-NativeWinApp Source Code
 # 
 # License: The Apache License, Version 2.0
 # https://www.apache.org/licenses/LICENSE-2.0
@@ -70,12 +70,12 @@ tmp/unix/$(DEBUG_OR_RELEASE)/submodules/../submodules/IPA-DN-ThinLib/src/Cedar/%
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 
-# NativeUtilApp source files
-NativeUtilApp_SRCS := $(wildcard NativeUtilApp/*.c)
-NativeUtilApp_HEADERS := $(wildcard NativeUtilApp/*.h)
-NativeUtilApp_OBJS := $(addprefix tmp/unix/$(DEBUG_OR_RELEASE)/,$(addsuffix .o,$(sort $(basename $(NativeUtilApp_SRCS)))))
+# NativeWinApp source files
+NativeWinApp_SRCS := $(wildcard NativeWinApp/*.c)
+NativeWinApp_HEADERS := $(wildcard NativeWinApp/*.h)
+NativeWinApp_OBJS := $(addprefix tmp/unix/$(DEBUG_OR_RELEASE)/,$(addsuffix .o,$(sort $(basename $(NativeWinApp_SRCS)))))
 
-tmp/unix/$(DEBUG_OR_RELEASE)/NativeUtilApp/%.o: NativeUtilApp/%.c $(NativeUtilApp_HEADERS) $(CEDAR_HEADERS) $(MAYAQUA_HEADERS)
+tmp/unix/$(DEBUG_OR_RELEASE)/NativeWinApp/%.o: NativeWinApp/%.c $(NativeWinApp_HEADERS) $(CEDAR_HEADERS) $(MAYAQUA_HEADERS)
 	@if [ ! -e `dirname $@` ]; then mkdir -p `dirname $@`; fi
 	$(CC) $(CFLAGS) -o $@ -c $<
 
@@ -83,13 +83,13 @@ tmp/unix/$(DEBUG_OR_RELEASE)/NativeUtilApp/%.o: NativeUtilApp/%.c $(NativeUtilAp
 # Targets and build rules
 all:	build
 
-build:	bin/NativeUtilApp
+build:	bin/NativeWinApp
 
 clean:
 	-rm -fr tmp/unix/debug/ tmp/unix/release/
-	-rm -f bin/NativeUtilApp
+	-rm -f bin/NativeWinApp
 
-bin/NativeUtilApp:	$(MAYAQUA_OBJS) $(CEDAR_OBJS) $(NativeUtilApp_OBJS)
+bin/NativeWinApp:	$(MAYAQUA_OBJS) $(CEDAR_OBJS) $(NativeWinApp_OBJS)
 	$(CC) $(LDFLAGS_DEBUG) $^ $(LDLIBS) -o $@
 
 

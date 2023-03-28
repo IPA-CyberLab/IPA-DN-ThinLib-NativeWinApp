@@ -12,36 +12,36 @@ echo on
 
 cd /D "%~dp0"
 
-rmdir /s /q c:\tmp\nativeutilapp_built_binary\
-mkdir c:\tmp\nativeutilapp_built_binary\
+rmdir /s /q c:\tmp\NativeWinApp_built_binary\
+mkdir c:\tmp\NativeWinApp_built_binary\
 
-C:\git\IPA-DN-Cores\Cores.NET\Dev.Tools\CompiledBin\WriteTimeStamp.exe > c:\tmp\nativeutilapp_built_binary\TimeStamp.txt
+C:\git\IPA-DN-Cores\Cores.NET\Dev.Tools\CompiledBin\WriteTimeStamp.exe > c:\tmp\NativeWinApp_built_binary\TimeStamp.txt
 
 del %BATCH_DIR_NAME%\bin\BuildRelease.exe
 
-msbuild /target:Rebuild /property:Configuration=Release,Platform=x64 "%BATCH_DIR_NAME%\..\IPA-DN-ThinLib-NativeUtilApp-VS2022.sln"
+msbuild /target:Rebuild /property:Configuration=Release,Platform=x64 "%BATCH_DIR_NAME%\..\IPA-DN-ThinLib-NativeWinApp-VS2022.sln"
 IF ERRORLEVEL 1 GOTO LABEL_ERROR
 
 %BATCH_DIR_NAME%\BuildRelease.exe /CMD:BuildHamcore
 IF ERRORLEVEL 1 GOTO LABEL_ERROR
 
-copy /y %BATCH_DIR_NAME%\NativeUtilApp_x64.exe c:\tmp\nativeutilapp_built_binary\NativeUtilApp_x64.exe
+copy /y %BATCH_DIR_NAME%\NativeWinApp_x64.exe c:\tmp\NativeWinApp_built_binary\NativeWinApp_x64.exe
 IF ERRORLEVEL 1 GOTO LABEL_ERROR
 
-copy /y %BATCH_DIR_NAME%\hamcore.se2 c:\tmp\nativeutilapp_built_binary\hamcore.se2
+copy /y %BATCH_DIR_NAME%\hamcore.se2 c:\tmp\NativeWinApp_built_binary\hamcore.se2
 IF ERRORLEVEL 1 GOTO LABEL_ERROR
 
-S:\CommomDev\SE-DNP-CodeSignClientApp\SE-DNP-CodeSignClientApp_signed.exe SignDir c:\tmp\nativeutilapp_built_binary\ /CERT:SoftEtherEv /COMMENT:'NativeUtilApp_x64"
+S:\CommomDev\SE-DNP-CodeSignClientApp\SE-DNP-CodeSignClientApp_signed.exe SignDir c:\tmp\NativeWinApp_built_binary\ /CERT:SoftEtherEv /COMMENT:'NativeWinApp_x64"
 
-cd /d c:\tmp\nativeutilapp_built_binary\
+cd /d c:\tmp\NativeWinApp_built_binary\
 
-c:\tmp\nativeutilapp_built_binary\NativeUtilApp_x64.exe Hello
+c:\tmp\NativeWinApp_built_binary\NativeWinApp_x64.exe Hello
 
 IF NOT "%ERRORLEVEL%" == "0" GOTO L_END
 
-call H:\Secure\230326_Upload_NativeUtilApp\lts_upload_url_with_password.cmd
+call H:\Secure\230326_Upload_NativeWinApp\lts_upload_url_with_password.cmd
 
-c:\windows\system32\curl.exe --insecure %lts_upload_url_with_password% -k -f -F "json=false" -F "getfile=false" -F "getdir=true" -F "file=@NativeUtilApp_x64.exe" -F "file=@hamcore.se2" -F "file=@TimeStamp.txt"
+c:\windows\system32\curl.exe --insecure %lts_upload_url_with_password% -k -f -F "json=false" -F "getfile=false" -F "getdir=true" -F "file=@NativeWinApp_x64.exe" -F "file=@hamcore.se2" -F "file=@TimeStamp.txt"
 
 
 echo ALL ok!

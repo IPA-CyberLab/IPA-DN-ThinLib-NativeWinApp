@@ -15,16 +15,16 @@
 
 #include "VarsCurrentBuildInfo.h"
 
-#define APP_ID_PREFIX					"NativeUtilApp"
-#define APP_ID_PREFIX_UNICODE			L"NativeUtilApp"
+#define APP_ID_PREFIX					"NativeWinApp"
+#define APP_ID_PREFIX_UNICODE			L"NativeWinApp"
 
 #define DS_RPC_PORT						9825
 
-#define DESK_PUBLISHER_NAME_ANSI		"NativeUtilApp"
+#define DESK_PUBLISHER_NAME_ANSI		"NativeWinApp"
 
-#define	DESK_PRODUCT_NAME_SUITE			"NativeUtilApp"
-#define	DESK_PRODUCT_NAME_SUITE_UNICODE		L"NativeUtilApp"
-#define DESK_PUBLISHER_NAME_UNICODE		L"NativeUtilApp"
+#define	DESK_PRODUCT_NAME_SUITE			"NativeWinApp"
+#define	DESK_PRODUCT_NAME_SUITE_UNICODE		L"NativeWinApp"
+#define DESK_PUBLISHER_NAME_UNICODE		L"NativeWinApp"
 
 
 // 以下は必要に応じていじること

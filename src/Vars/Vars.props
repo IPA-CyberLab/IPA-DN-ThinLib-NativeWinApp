@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <APP_ID_PREFIX>NativeUtilApp</APP_ID_PREFIX>
+    <APP_ID_PREFIX>NativeWinApp</APP_ID_PREFIX>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
