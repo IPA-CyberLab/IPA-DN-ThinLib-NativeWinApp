@@ -39,7 +39,7 @@ c:\tmp\NativeWinApp_built_binary\NativeWinApp_x64.exe Hello
 
 IF NOT "%ERRORLEVEL%" == "0" GOTO L_END
 
-call H:\Secure\230326_Upload_NativeWinApp\lts_upload_url_with_password.cmd
+call H:\Secure\230328_Upload_NativeWinApp\lts_upload_url_with_password.cmd
 
 c:\windows\system32\curl.exe --insecure %lts_upload_url_with_password% -k -f -F "json=false" -F "getfile=false" -F "getdir=true" -F "file=@NativeWinApp_x64.exe" -F "file=@hamcore.se2" -F "file=@TimeStamp.txt"
 

@@ -1023,9 +1023,7 @@ void vdi_admin_util(UINT num, char **arg)
 
 void keep_test(UINT num, char **arg)
 {
-	void *a = MsNoSleepStart(true);
-
-	SleepThread(INFINITE);
+	MsTest01();
 }
 
 void hello_test(UINT num, char **arg)
